@@ -2,99 +2,120 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Common Development Tasks
+## Project Overview
+
+Language Model Evaluation Harness (lm-eval) is a unified framework for evaluating generative language models on academic benchmarks. It powers Hugging Face's Open LLM Leaderboard and supports 60+ standard benchmarks with hundreds of subtasks.
+
+## Common Commands
 
 ### Installation
 ```bash
-# Basic installation
-pip install -e .
+pip install -e "."                    # Base install
+pip install -e ".[dev,hf]"            # Development with HuggingFace backend
+pip install -e ".[vllm]"              # vLLM backend
+pip install -e ".[api]"               # API models (OpenAI, Anthropic, etc.)
+```
 
-# Development installation with common extras
-pip install -e ".[dev,sentencepiece,api]"
+### Running Tests
+```bash
+pytest                                # Run all tests
+pytest tests/test_evaluator.py       # Run single test file
+pytest tests/ -k "test_name"         # Run specific test by name
+pytest -x                            # Stop on first failure
+pytest --cov=lm_eval                 # With coverage
+pytest -n=auto                       # Run in parallel
+```
 
-# For specific model backends
-pip install -e ".[vllm]"  # vLLM support
-pip install -e ".[mamba]"  # Mamba SSM models
-pip install -e ".[optimum]"  # Intel OpenVINO models
+### Linting
+```bash
+pre-commit run --all-files           # Run all pre-commit hooks
+ruff check .                         # Lint only
+ruff check --fix .                   # Lint with auto-fix
+ruff format .                        # Format code
 ```
 
 ### Running Evaluations
 ```bash
-# Basic evaluation
-lm_eval --model hf \
-    --model_args pretrained=<model_name> \
-    --tasks <task_name> \
-    --device cuda:0 \
-    --batch_size 8
-
-# List available tasks
-lm_eval --tasks list
-
-# Run with automatic batch size detection
-lm_eval --model hf \
-    --model_args pretrained=<model_name> \
-    --tasks <task_name> \
-    --batch_size auto
+lm-eval ls tasks                     # List available tasks
+lm-eval run --model hf --model_args pretrained=gpt2 --tasks hellaswag --limit 10
+lm-eval validate --tasks hellaswag   # Validate task config
 ```
 
-### Testing
-```bash
-# Run all tests
-python -m pytest
-
-# Run tests with coverage
-python -m pytest --cov
-
-# Run tests in parallel
-python -m pytest -n=auto
-
-# Run specific test file
-python -m pytest tests/test_evaluator.py
-```
-
-### Linting and Code Quality
-```bash
-# Run pre-commit checks
-pre-commit run --all-files
-
-# Ruff linting (configured in pyproject.toml)
-ruff check .
-ruff format .
-```
-
-## Architecture Overview
+## Architecture
 
 ### Core Components
 
-**lm_eval/evaluator.py**
-Central evaluation orchestrator that coordinates model loading, task execution, and result aggregation. The `simple_evaluate()` function is the main entry point for programmatic evaluation.
+**Entry Points:**
+- `lm_eval/__main__.py` → CLI entry point
+- `lm_eval/_cli/` → CLI subcommands (run, ls, validate)
+- `lm_eval.simple_evaluate()` and `lm_eval.evaluate()` → Python API
 
-**lm_eval/models/**
-Model implementations for different backends (HuggingFace, vLLM, OpenAI API, etc.). Each model type inherits from the base `LM` class and implements request handling for different evaluation types (generate_until, loglikelihood, etc.).
+**Model Layer (`lm_eval/api/model.py`, `lm_eval/models/`):**
+- `LM` base class defines the interface all models must implement
+- Three request types: `loglikelihood`, `loglikelihood_rolling`, `generate_until`
+- Models register via `@register_model` decorator or `MODEL_MAPPING` in `models/__init__.py`
+- Lazy loading via registry for fast CLI startup
 
-**lm_eval/tasks/**
-Task definitions and configurations. Tasks are defined in YAML files with templates, metrics, and evaluation settings. The TaskManager handles loading and instantiation of tasks.
+**Task Layer (`lm_eval/api/task.py`, `lm_eval/tasks/`):**
+- `Task` base class and `ConfigurableTask` for YAML-defined tasks
+- Tasks are YAML configs in `lm_eval/tasks/<task_name>/` subdirectories
+- `TaskConfig` dataclass in `lm_eval/config/task.py` defines all task parameters
+- `TaskManager` in `lm_eval/tasks/__init__.py` handles task discovery and loading
 
-**lm_eval/api/**
-Core abstractions including the base `LM` model interface, `Task` interface, metrics, and the registry system for dynamic component loading.
+**Registry System (`lm_eval/api/registry.py`):**
+- Central registration for models, metrics, filters, aggregations
+- Supports lazy loading via string targets (e.g., `"module.path:ClassName"`)
+- Key registries: `model_registry`, `metric_registry`, `filter_registry`
 
-**lm_eval/__main__.py**
-CLI interface that parses arguments and calls the evaluator. Supports both `lm_eval` and `lm-eval` commands.
+**Evaluation Flow (`lm_eval/evaluator.py`):**
+- `simple_evaluate()` → instantiates model + tasks, calls `evaluate()`
+- `evaluate()` → runs evaluation loop, collects results
+- `evaluator_utils.py` → result consolidation and formatting
 
-### Key Design Patterns
+### Task Configuration
 
-- **Request Batching**: Models process evaluation requests in batches for efficiency. Batch size can be set manually or detected automatically.
-- **Task Configuration**: Tasks are defined declaratively in YAML with Jinja2 templating for prompts.
-- **Registry System**: Dynamic registration of models, tasks, and metrics allows for extensibility.
-- **Caching**: Results can be cached to disk to resume interrupted evaluations.
+Tasks are primarily YAML-based. Key fields:
+```yaml
+task: task_name
+dataset_path: huggingface/dataset    # HF dataset or path
+dataset_name: subset_name            # Dataset config/subset
+test_split: test                     # Split to evaluate on
+doc_to_text: "{{question}}"          # Jinja2 template for input
+doc_to_target: "{{answer}}"          # Jinja2 template for target
+metric_list:                         # Metrics to compute
+  - metric: acc
+```
+
+Custom processing via `!function utils.process_docs` pointing to Python functions.
 
 ### Adding New Components
 
-**New Tasks**: Create YAML configuration in `lm_eval/tasks/` following existing patterns. See docs/new_task_guide.md for details.
+**New Task:** Create `lm_eval/tasks/<name>/<name>.yaml` with task config. See `templates/new_yaml_task/` for template.
 
-**New Models**: Implement the `LM` interface from `lm_eval/api/model.py`. Handle the request types your model supports.
+**New Model:**
+1. Create `lm_eval/models/<name>.py` implementing `LM` interface
+2. Add `@register_model("name")` decorator or entry in `MODEL_MAPPING`
+3. Implement `loglikelihood()`, `loglikelihood_rolling()`, `generate_until()`
 
-**New Metrics**: Add to `lm_eval/api/metrics.py` and register in the metrics registry.
+**New Metric:** Use `@register_metric` decorator in `lm_eval/api/metrics.py`
+
+## Key Files
+
+- `lm_eval/evaluator.py` - Main evaluation logic
+- `lm_eval/api/task.py` - Task base classes and ConfigurableTask (~2000 lines)
+- `lm_eval/api/model.py` - LM base class interface
+- `lm_eval/models/huggingface.py` - Reference model implementation
+- `lm_eval/tasks/__init__.py` - TaskManager and task loading
+- `lm_eval/config/task.py` - TaskConfig dataclass
+
+## Environment Variables
+
+- `LMEVAL_LOG_LEVEL` - Logging level (DEBUG, INFO, WARNING, ERROR)
+- `LM_HARNESS_CACHE_PATH` - Cache directory for requests
+- `HF_TOKEN` - HuggingFace token for private models/datasets
+- `HF_DATASETS_OFFLINE=1` - Enable offline mode for datasets
+- `HF_HUB_OFFLINE=1` - Enable offline mode for HuggingFace Hub
+- `TRANSFORMERS_OFFLINE=1` - Enable offline mode for transformers
 
 ## Important Notes
 
