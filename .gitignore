@@ -49,3 +49,6 @@ examples/wandb/
 
 #uv
 uv.lock
+
+# Offline datasets
+offline_datasets/
