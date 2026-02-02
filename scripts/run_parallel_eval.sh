@@ -32,6 +32,9 @@ USE_CHAT_TEMPLATE=true
 # Fewshot 설정 (MMLU/KMMLU: 5, KBL: 0)
 NUM_FEWSHOT=0  # KBL은 0, MMLU/KMMLU는 5 권장
 
+# 최대 시퀀스 길이 (메모리 부족 시 줄이기)
+MAX_MODEL_LEN=8192  # 평가용으로 충분한 길이
+
 # 데이터셋 경로 (오프라인 모드 시)
 # DATASET_PATH="./offline_datasets"
 
@@ -73,7 +76,7 @@ echo ""
 echo "[1/4] 모델 1 시작 (GPU 0,1)"
 CUDA_VISIBLE_DEVICES=0,1 lm-eval run \
     --model vllm \
-    --model_args pretrained=$MODEL1,tensor_parallel_size=2,dtype=bfloat16,gpu_memory_utilization=0.9 \
+    --model_args pretrained=$MODEL1,tensor_parallel_size=2,dtype=bfloat16,gpu_memory_utilization=0.9,max_model_len=$MAX_MODEL_LEN \
     --tasks $TASKS \
     --batch_size auto \
     --output_path "$OUTPUT_DIR/model1" \
@@ -85,7 +88,7 @@ PID1=$!
 echo "[2/4] 모델 2 시작 (GPU 2,3)"
 CUDA_VISIBLE_DEVICES=2,3 lm-eval run \
     --model vllm \
-    --model_args pretrained=$MODEL2,tensor_parallel_size=2,dtype=bfloat16,gpu_memory_utilization=0.9 \
+    --model_args pretrained=$MODEL2,tensor_parallel_size=2,dtype=bfloat16,gpu_memory_utilization=0.9,max_model_len=$MAX_MODEL_LEN \
     --tasks $TASKS \
     --batch_size auto \
     --output_path "$OUTPUT_DIR/model2" \
@@ -97,7 +100,7 @@ PID2=$!
 echo "[3/4] 모델 3 시작 (GPU 4,5)"
 CUDA_VISIBLE_DEVICES=4,5 lm-eval run \
     --model vllm \
-    --model_args pretrained=$MODEL3,tensor_parallel_size=2,dtype=bfloat16,gpu_memory_utilization=0.9 \
+    --model_args pretrained=$MODEL3,tensor_parallel_size=2,dtype=bfloat16,gpu_memory_utilization=0.9,max_model_len=$MAX_MODEL_LEN \
     --tasks $TASKS \
     --batch_size auto \
     --output_path "$OUTPUT_DIR/model3" \
@@ -109,7 +112,7 @@ PID3=$!
 echo "[4/4] 모델 4 시작 (GPU 6,7)"
 CUDA_VISIBLE_DEVICES=6,7 lm-eval run \
     --model vllm \
-    --model_args pretrained=$MODEL4,tensor_parallel_size=2,dtype=bfloat16,gpu_memory_utilization=0.9 \
+    --model_args pretrained=$MODEL4,tensor_parallel_size=2,dtype=bfloat16,gpu_memory_utilization=0.9,max_model_len=$MAX_MODEL_LEN \
     --tasks $TASKS \
     --batch_size auto \
     --output_path "$OUTPUT_DIR/model4" \
