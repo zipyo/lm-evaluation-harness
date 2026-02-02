@@ -26,6 +26,9 @@ TASKS="kbl"  # 또는 "mmlu,kmmlu,kbl"
 # 출력 디렉토리
 OUTPUT_DIR="./results"
 
+# Chat 모델 옵션 (Instruct/Chat 모델이면 true)
+USE_CHAT_TEMPLATE=true
+
 # 데이터셋 경로 (오프라인 모드 시)
 # DATASET_PATH="./offline_datasets"
 
@@ -39,6 +42,12 @@ mkdir -p "$OUTPUT_DIR" logs
 # export HF_DATASETS_OFFLINE=1
 # export HF_HUB_OFFLINE=1
 # export TRANSFORMERS_OFFLINE=1
+
+# Chat template 옵션 설정
+CHAT_OPTS=""
+if [ "$USE_CHAT_TEMPLATE" = true ]; then
+    CHAT_OPTS="--apply_chat_template --fewshot_as_multiturn"
+fi
 
 # ============================================================
 # 모델 평가 실행
@@ -59,6 +68,7 @@ CUDA_VISIBLE_DEVICES=0,1 lm-eval run \
     --tasks $TASKS \
     --batch_size auto \
     --output_path "$OUTPUT_DIR/model1" \
+    $CHAT_OPTS \
     &> logs/model1.log &
 PID1=$!
 
@@ -70,6 +80,7 @@ CUDA_VISIBLE_DEVICES=2,3 lm-eval run \
     --tasks $TASKS \
     --batch_size auto \
     --output_path "$OUTPUT_DIR/model2" \
+    $CHAT_OPTS \
     &> logs/model2.log &
 PID2=$!
 
@@ -81,6 +92,7 @@ CUDA_VISIBLE_DEVICES=4,5 lm-eval run \
     --tasks $TASKS \
     --batch_size auto \
     --output_path "$OUTPUT_DIR/model3" \
+    $CHAT_OPTS \
     &> logs/model3.log &
 PID3=$!
 
@@ -92,6 +104,7 @@ CUDA_VISIBLE_DEVICES=6,7 lm-eval run \
     --tasks $TASKS \
     --batch_size auto \
     --output_path "$OUTPUT_DIR/model4" \
+    $CHAT_OPTS \
     &> logs/model4.log &
 PID4=$!
 
