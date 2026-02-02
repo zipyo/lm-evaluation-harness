@@ -15,11 +15,18 @@ Usage:
 
     # 서브셋 목록 확인
     python download_benchmarks.py --list-subsets
+
+    # SSL 인증서 검증 비활성화 (기업 프록시 환경)
+    python download_benchmarks.py --output-dir ./offline_datasets --benchmark kbl --no-ssl
+
+    # 프록시 + SSL 비활성화
+    python download_benchmarks.py --output-dir ./offline_datasets --benchmark kbl --proxy http://proxy:8080 --no-ssl
 """
 
 import argparse
 import json
 import logging
+import os
 import sys
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -27,16 +34,40 @@ from typing import Dict, List, Optional
 try:
     from datasets import load_dataset
     from tqdm import tqdm
+    import urllib3
 except ImportError:
     print("Required packages not found. Please install:")
     print("pip install datasets tqdm")
     sys.exit(1)
 
+# 로거 초기화 (함수에서 사용하기 전에 정의)
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
+
+
+def setup_proxy(proxy_url: str):
+    """프록시 설정 (기업 환경용)"""
+    os.environ['HTTP_PROXY'] = proxy_url
+    os.environ['HTTPS_PROXY'] = proxy_url
+    os.environ['http_proxy'] = proxy_url
+    os.environ['https_proxy'] = proxy_url
+    logger.info(f"프록시 설정됨: {proxy_url}")
+
+
+def disable_ssl_verification():
+    """SSL 인증서 검증 비활성화 (기업 프록시 환경용)"""
+    logger.warning("SSL 인증서 검증 비활성화됨 - 신뢰할 수 있는 네트워크에서만 사용하세요")
+
+    # HuggingFace Hub SSL 검증 비활성화 환경변수
+    os.environ['CURL_CA_BUNDLE'] = ''
+    os.environ['REQUESTS_CA_BUNDLE'] = ''
+    os.environ['HF_HUB_DISABLE_SSL_VERIFICATION'] = '1'
+
+    # urllib3 경고 비활성화
+    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 # ============================================================
@@ -265,8 +296,26 @@ def main():
         action="store_true",
         help="상세 로그 출력"
     )
+    parser.add_argument(
+        "--no-ssl",
+        action="store_true",
+        help="SSL 인증서 검증 비활성화 (기업 프록시 환경용)"
+    )
+    parser.add_argument(
+        "--proxy",
+        type=str,
+        help="프록시 URL (예: http://proxy.company.com:8080)"
+    )
 
     args = parser.parse_args()
+
+    # 프록시 설정
+    if args.proxy:
+        setup_proxy(args.proxy)
+
+    # SSL 비활성화 (프록시 환경)
+    if args.no_ssl:
+        disable_ssl_verification()
 
     if args.verbose:
         logging.getLogger().setLevel(logging.DEBUG)
