@@ -29,6 +29,9 @@ OUTPUT_DIR="./results"
 # Chat 모델 옵션 (Instruct/Chat 모델이면 true)
 USE_CHAT_TEMPLATE=true
 
+# Fewshot 설정 (MMLU/KMMLU: 5, KBL: 0)
+NUM_FEWSHOT=0  # KBL은 0, MMLU/KMMLU는 5 권장
+
 # 데이터셋 경로 (오프라인 모드 시)
 # DATASET_PATH="./offline_datasets"
 
@@ -47,6 +50,12 @@ mkdir -p "$OUTPUT_DIR" logs
 CHAT_OPTS=""
 if [ "$USE_CHAT_TEMPLATE" = true ]; then
     CHAT_OPTS="--apply_chat_template --fewshot_as_multiturn"
+fi
+
+# Fewshot 옵션 설정
+FEWSHOT_OPTS=""
+if [ "$NUM_FEWSHOT" -gt 0 ]; then
+    FEWSHOT_OPTS="--num_fewshot $NUM_FEWSHOT"
 fi
 
 # ============================================================
@@ -68,7 +77,7 @@ CUDA_VISIBLE_DEVICES=0,1 lm-eval run \
     --tasks $TASKS \
     --batch_size auto \
     --output_path "$OUTPUT_DIR/model1" \
-    $CHAT_OPTS \
+    $CHAT_OPTS $FEWSHOT_OPTS \
     &> logs/model1.log &
 PID1=$!
 
@@ -80,7 +89,7 @@ CUDA_VISIBLE_DEVICES=2,3 lm-eval run \
     --tasks $TASKS \
     --batch_size auto \
     --output_path "$OUTPUT_DIR/model2" \
-    $CHAT_OPTS \
+    $CHAT_OPTS $FEWSHOT_OPTS \
     &> logs/model2.log &
 PID2=$!
 
@@ -92,7 +101,7 @@ CUDA_VISIBLE_DEVICES=4,5 lm-eval run \
     --tasks $TASKS \
     --batch_size auto \
     --output_path "$OUTPUT_DIR/model3" \
-    $CHAT_OPTS \
+    $CHAT_OPTS $FEWSHOT_OPTS \
     &> logs/model3.log &
 PID3=$!
 
@@ -104,7 +113,7 @@ CUDA_VISIBLE_DEVICES=6,7 lm-eval run \
     --tasks $TASKS \
     --batch_size auto \
     --output_path "$OUTPUT_DIR/model4" \
-    $CHAT_OPTS \
+    $CHAT_OPTS $FEWSHOT_OPTS \
     &> logs/model4.log &
 PID4=$!
 
