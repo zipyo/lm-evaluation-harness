@@ -35,8 +35,8 @@ NUM_FEWSHOT=0  # KBL은 0, MMLU/KMMLU는 5 권장
 # 최대 시퀀스 길이 (메모리 부족 시 줄이기)
 MAX_MODEL_LEN=8192  # 평가용으로 충분한 길이
 
-# 데이터셋 경로 (오프라인 모드 시)
-# DATASET_PATH="./offline_datasets"
+# 오프라인 태스크 YAML 경로
+OFFLINE_TASKS_PATH="./offline_tasks"
 
 # ============================================================
 # 환경 설정
@@ -61,6 +61,12 @@ if [ "$NUM_FEWSHOT" -gt 0 ]; then
     FEWSHOT_OPTS="--num_fewshot $NUM_FEWSHOT"
 fi
 
+# 오프라인 태스크 경로 옵션
+INCLUDE_OPTS=""
+if [ -d "$OFFLINE_TASKS_PATH" ]; then
+    INCLUDE_OPTS="--include_path $OFFLINE_TASKS_PATH"
+fi
+
 # ============================================================
 # 모델 평가 실행
 # ============================================================
@@ -80,7 +86,7 @@ CUDA_VISIBLE_DEVICES=0,1 lm-eval run \
     --tasks $TASKS \
     --batch_size auto \
     --output_path "$OUTPUT_DIR/model1" \
-    $CHAT_OPTS $FEWSHOT_OPTS \
+    $CHAT_OPTS $FEWSHOT_OPTS $INCLUDE_OPTS \
     &> logs/model1.log &
 PID1=$!
 
@@ -92,7 +98,7 @@ CUDA_VISIBLE_DEVICES=2,3 lm-eval run \
     --tasks $TASKS \
     --batch_size auto \
     --output_path "$OUTPUT_DIR/model2" \
-    $CHAT_OPTS $FEWSHOT_OPTS \
+    $CHAT_OPTS $FEWSHOT_OPTS $INCLUDE_OPTS \
     &> logs/model2.log &
 PID2=$!
 
@@ -104,7 +110,7 @@ CUDA_VISIBLE_DEVICES=4,5 lm-eval run \
     --tasks $TASKS \
     --batch_size auto \
     --output_path "$OUTPUT_DIR/model3" \
-    $CHAT_OPTS $FEWSHOT_OPTS \
+    $CHAT_OPTS $FEWSHOT_OPTS $INCLUDE_OPTS \
     &> logs/model3.log &
 PID3=$!
 
@@ -116,7 +122,7 @@ CUDA_VISIBLE_DEVICES=6,7 lm-eval run \
     --tasks $TASKS \
     --batch_size auto \
     --output_path "$OUTPUT_DIR/model4" \
-    $CHAT_OPTS $FEWSHOT_OPTS \
+    $CHAT_OPTS $FEWSHOT_OPTS $INCLUDE_OPTS \
     &> logs/model4.log &
 PID4=$!
 
