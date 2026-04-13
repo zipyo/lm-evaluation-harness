@@ -1,0 +1,76 @@
+{
+  "builder_name": "json",
+  "citation": "",
+  "config_name": "bar_exam_criminal_2014",
+  "dataset_name": "kbl",
+  "dataset_size": 72832,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/lbox/kbl@695653ba87affa2c3113896013179c81fc16786a/bar_exam/criminal/criminal2014.json": {
+      "num_bytes": 78915,
+      "checksum": null
+    }
+  },
+  "download_size": 78915,
+  "features": {
+    "no": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "A": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "B": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "C": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "D": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "E": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "gt": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "meta": {
+      "origin": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "url": {
+        "dtype": "string",
+        "_type": "Value"
+      }
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 151747,
+  "splits": {
+    "test": {
+      "name": "test",
+      "num_bytes": 72832,
+      "num_examples": 40,
+      "dataset_name": "kbl"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

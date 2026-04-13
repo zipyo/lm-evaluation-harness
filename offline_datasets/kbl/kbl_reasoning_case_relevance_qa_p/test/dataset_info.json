@@ -1,0 +1,112 @@
+{
+  "builder_name": "json",
+  "citation": "",
+  "config_name": "kbl_reasoning_case_relevance_qa_p",
+  "dataset_name": "kbl",
+  "dataset_size": 1802765,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/lbox/kbl@695653ba87affa2c3113896013179c81fc16786a/reasoning/kbl_case_relevance_qa_p_v0.1.json": {
+      "num_bytes": 1835861,
+      "checksum": null
+    }
+  },
+  "download_size": 1835861,
+  "features": {
+    "doc_id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "query_case_appellant": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "query_case_judicial_opinion": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "query_case_fact": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "query_case_claim": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "retrieved_case_result": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "retrieved_case_appellant": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "retrieved_case_judicial_opinion": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "retrieved_case_fact": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "retrieved_case_claim": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "A": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "B": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "label": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "meta": {
+      "query_lower_court_id": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "query_supreme_court_id:": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "retrieved_lower_court_id": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "retrieved_supreme_court_id": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "type": {
+        "dtype": "string",
+        "_type": "Value"
+      }
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 3638626,
+  "splits": {
+    "test": {
+      "name": "test",
+      "num_bytes": 1802765,
+      "num_examples": 56,
+      "dataset_name": "kbl"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

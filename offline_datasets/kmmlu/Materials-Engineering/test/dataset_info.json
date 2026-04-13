@@ -1,0 +1,86 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "Materials-Engineering",
+  "dataset_name": "kmmlu",
+  "dataset_size": 1468876,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/HAERAE-HUB/KMMLU@d61b3f19e552c576bf5960dd24289763edc36a88/data/Materials-Engineering-train.csv": {
+      "num_bytes": 1094376,
+      "checksum": null
+    },
+    "hf://datasets/HAERAE-HUB/KMMLU@d61b3f19e552c576bf5960dd24289763edc36a88/data/Materials-Engineering-dev.csv": {
+      "num_bytes": 1042,
+      "checksum": null
+    },
+    "hf://datasets/HAERAE-HUB/KMMLU@d61b3f19e552c576bf5960dd24289763edc36a88/data/Materials-Engineering-test.csv": {
+      "num_bytes": 257466,
+      "checksum": null
+    }
+  },
+  "download_size": 1352884,
+  "features": {
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "answer": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "A": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "B": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "C": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "D": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Category": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Human Accuracy": {
+      "dtype": "float64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 2821760,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 1187191,
+      "num_examples": 4254,
+      "dataset_name": "kmmlu"
+    },
+    "dev": {
+      "name": "dev",
+      "num_bytes": 1107,
+      "num_examples": 5,
+      "dataset_name": "kmmlu"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 280578,
+      "num_examples": 1000,
+      "dataset_name": "kmmlu"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

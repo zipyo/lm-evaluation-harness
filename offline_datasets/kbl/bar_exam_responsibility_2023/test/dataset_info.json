@@ -1,0 +1,72 @@
+{
+  "builder_name": "json",
+  "citation": "",
+  "config_name": "bar_exam_responsibility_2023",
+  "dataset_name": "kbl",
+  "dataset_size": 47317,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/lbox/kbl@695653ba87affa2c3113896013179c81fc16786a/bar_exam/responsibility/responsibility2023.json": {
+      "num_bytes": 54559,
+      "checksum": null
+    }
+  },
+  "download_size": 54559,
+  "features": {
+    "no": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "A": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "B": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "C": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "D": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "gt": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "meta": {
+      "origin": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "url": {
+        "dtype": "string",
+        "_type": "Value"
+      }
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 101876,
+  "splits": {
+    "test": {
+      "name": "test",
+      "num_bytes": 47317,
+      "num_examples": 40,
+      "dataset_name": "kbl"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

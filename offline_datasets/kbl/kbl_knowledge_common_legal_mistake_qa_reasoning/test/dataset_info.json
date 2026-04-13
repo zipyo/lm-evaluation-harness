@@ -1,0 +1,58 @@
+{
+  "builder_name": "json",
+  "citation": "",
+  "config_name": "kbl_knowledge_common_legal_mistake_qa_reasoning",
+  "dataset_name": "kbl",
+  "dataset_size": 16893,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/lbox/kbl@695653ba87affa2c3113896013179c81fc16786a/knowledge/kbl_legal_common_legal_mistake_qa_reasoning_v0.1.json": {
+      "num_bytes": 21287,
+      "checksum": null
+    }
+  },
+  "download_size": 21287,
+  "features": {
+    "doc-id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "label": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "A": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "B": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "C": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 38180,
+  "splits": {
+    "test": {
+      "name": "test",
+      "num_bytes": 16893,
+      "num_examples": 40,
+      "dataset_name": "kbl"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

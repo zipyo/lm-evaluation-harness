@@ -1,0 +1,86 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "Railway-and-Automotive-Engineering",
+  "dataset_name": "kmmlu",
+  "dataset_size": 2135363,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/HAERAE-HUB/KMMLU@d61b3f19e552c576bf5960dd24289763edc36a88/data/Railway-and-Automotive-Engineering-train.csv": {
+      "num_bytes": 1701108,
+      "checksum": null
+    },
+    "hf://datasets/HAERAE-HUB/KMMLU@d61b3f19e552c576bf5960dd24289763edc36a88/data/Railway-and-Automotive-Engineering-dev.csv": {
+      "num_bytes": 1306,
+      "checksum": null
+    },
+    "hf://datasets/HAERAE-HUB/KMMLU@d61b3f19e552c576bf5960dd24289763edc36a88/data/Railway-and-Automotive-Engineering-test.csv": {
+      "num_bytes": 276141,
+      "checksum": null
+    }
+  },
+  "download_size": 1978555,
+  "features": {
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "answer": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "A": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "B": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "C": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "D": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Category": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Human Accuracy": {
+      "dtype": "float64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 4113918,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 1835346,
+      "num_examples": 6172,
+      "dataset_name": "kmmlu"
+    },
+    "dev": {
+      "name": "dev",
+      "num_bytes": 1382,
+      "num_examples": 5,
+      "dataset_name": "kmmlu"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 298635,
+      "num_examples": 1000,
+      "dataset_name": "kmmlu"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

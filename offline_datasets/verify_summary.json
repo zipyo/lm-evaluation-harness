@@ -1,0 +1,2866 @@
+{
+  "total_valid": 214,
+  "total_invalid": 0,
+  "results": {
+    "kbl": [
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_civil_2012",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 70
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_civil_2013",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 70
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_civil_2014",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 70
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_civil_2015",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 70
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_civil_2016",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 70
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_civil_2017",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 70
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_civil_2018",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 70
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_civil_2019",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 70
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_civil_2020",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 70
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_civil_2021",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 70
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_civil_2022",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 70
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_civil_2023",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 70
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_civil_2024",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 70
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_civil_2025",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 70
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_criminal_2012",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_criminal_2013",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_criminal_2014",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_criminal_2015",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_criminal_2016",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_criminal_2017",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_criminal_2018",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_criminal_2019",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_criminal_2020",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_criminal_2021",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_criminal_2022",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_criminal_2023",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_criminal_2024",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_criminal_2025",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_public_2012",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_public_2013",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_public_2014",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_public_2015",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_public_2016",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_public_2017",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_public_2018",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_public_2019",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 38
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_public_2020",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_public_2021",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_public_2022",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_public_2023",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_public_2024",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_public_2025",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_responsibility_2010",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_responsibility_2011",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_responsibility_2012",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_responsibility_2013",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_responsibility_2014",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_responsibility_2015",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_responsibility_2016",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_responsibility_2017",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_responsibility_2018",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_responsibility_2019",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_responsibility_2020",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_responsibility_2021",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_responsibility_2022",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\bar_exam_responsibility_2023",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\kbl_knowledge_common_legal_mistake_qa",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 41
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\kbl_knowledge_common_legal_mistake_qa_reasoning",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 40
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\kbl_knowledge_legal_concept_qa",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\kbl_knowledge_offense_component_qa",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 102
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\kbl_knowledge_query_and_statute_matching_qa",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 52
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\kbl_knowledge_statute_hallucination_qa",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 75
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\kbl_knowledge_statute_number_and_content_matching_qa",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\kbl_reasoning_case_relevance_qa_p",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 56
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\kbl_reasoning_case_relevance_qa_q",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 46
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\kbl_reasoning_causal_reasoning_qa",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 95
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kbl\\kbl_reasoning_statement_consistency_qa",
+        "valid": true,
+        "splits": [
+          "test"
+        ],
+        "num_examples": {
+          "test": 91
+        },
+        "error": null
+      }
+    ],
+    "kmmlu": [
+      {
+        "path": "offline_datasets\\kmmlu\\Accounting",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 45,
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Agricultural-Sciences",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 5957,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Aviation-Engineering-and-Maintenance",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 3307,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Biology",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 3980,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Chemical-Engineering",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 833,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Chemistry",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 340,
+          "dev": 5,
+          "test": 600
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Civil-Engineering",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 9359,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Computer-Science",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 17373,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Construction",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 19175,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Criminal-Law",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 85,
+          "dev": 5,
+          "test": 200
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Ecology",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 6432,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Economics",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 94,
+          "dev": 5,
+          "test": 130
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Education",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 2,
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Electrical-Engineering",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 11965,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Electronics-Engineering",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 4904,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Energy-Management",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 5499,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Environmental-Science",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 12103,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Fashion",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 1558,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Food-Processing",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 14630,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Gas-Technology-and-Engineering",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 6154,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Geomatics",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 4613,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Health",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 3,
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Industrial-Engineer",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 16642,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Information-Technology",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 3684,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Interior-Architecture-and-Design",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 3922,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Korean-History",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 1,
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Law",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 1297,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Machine-Design-and-Manufacturing",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 7636,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Management",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 1371,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Maritime-Engineering",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 323,
+          "dev": 5,
+          "test": 600
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Marketing",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 701,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Materials-Engineering",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 4254,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Math",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 81,
+          "dev": 5,
+          "test": 300
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Mechanical-Engineering",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 4907,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Nondestructive-Testing",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 3794,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Patent",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 25,
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Political-Science-and-Sociology",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 44,
+          "dev": 5,
+          "test": 300
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Psychology",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 1354,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Public-Safety",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 11924,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Railway-and-Automotive-Engineering",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 6172,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Real-Estate",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 79,
+          "dev": 5,
+          "test": 200
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Refrigerating-Machinery",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 5242,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Social-Welfare",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 907,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Taxation",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 15,
+          "dev": 5,
+          "test": 200
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu\\Telecommunications-and-Wireless-Technology",
+        "valid": true,
+        "splits": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "train": 5736,
+          "dev": 5,
+          "test": 1000
+        },
+        "error": null
+      }
+    ],
+    "kmmlu_hard": [
+      {
+        "path": "offline_datasets\\kmmlu_hard\\accounting",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 46
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\agricultural_sciences",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\aviation_engineering_and_maintenance",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\biology",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\chemical_engineering",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\chemistry",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\civil_engineering",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\computer_science",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\construction",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\criminal_law",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\ecology",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\economics",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 42
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\education",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 23
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\electrical_engineering",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\electronics_engineering",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\energy_management",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\environmental_science",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\fashion",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\food_processing",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\gas_technology_and_engineering",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\geomatics",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\health",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 23
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\industrial_engineer",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\information_technology",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\interior_architecture_and_design",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\korean_history",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 44
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\law",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\machine_design_and_manufacturing",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\management",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\maritime_engineering",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\marketing",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\materials_engineering",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\math",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\mechanical_engineering",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\nondestructive_testing",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\patent",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 51
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\political_science_and_sociology",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 90
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\psychology",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\public_safety",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\railway_and_automotive_engineering",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\real_estate",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 89
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\refrigerating_machinery",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\social_welfare",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\taxation",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 96
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\kmmlu_hard\\telecommunications_and_wireless_technology",
+        "valid": true,
+        "splits": [
+          "dev",
+          "test"
+        ],
+        "num_examples": {
+          "dev": 5,
+          "test": 100
+        },
+        "error": null
+      }
+    ],
+    "mmlu": [
+      {
+        "path": "offline_datasets\\mmlu\\abstract_algebra",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 100,
+          "validation": 11,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\anatomy",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 135,
+          "validation": 14,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\astronomy",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 152,
+          "validation": 16,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\business_ethics",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 100,
+          "validation": 11,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\clinical_knowledge",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 265,
+          "validation": 29,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\college_biology",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 144,
+          "validation": 16,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\college_chemistry",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 100,
+          "validation": 8,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\college_computer_science",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 100,
+          "validation": 11,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\college_mathematics",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 100,
+          "validation": 11,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\college_medicine",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 173,
+          "validation": 22,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\college_physics",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 102,
+          "validation": 11,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\computer_security",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 100,
+          "validation": 11,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\conceptual_physics",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 235,
+          "validation": 26,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\econometrics",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 114,
+          "validation": 12,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\electrical_engineering",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 145,
+          "validation": 16,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\elementary_mathematics",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 378,
+          "validation": 41,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\formal_logic",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 126,
+          "validation": 14,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\global_facts",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 100,
+          "validation": 10,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\high_school_biology",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 310,
+          "validation": 32,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\high_school_chemistry",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 203,
+          "validation": 22,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\high_school_computer_science",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 100,
+          "validation": 9,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\high_school_european_history",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 165,
+          "validation": 18,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\high_school_geography",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 198,
+          "validation": 22,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\high_school_government_and_politics",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 193,
+          "validation": 21,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\high_school_macroeconomics",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 390,
+          "validation": 43,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\high_school_mathematics",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 270,
+          "validation": 29,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\high_school_microeconomics",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 238,
+          "validation": 26,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\high_school_physics",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 151,
+          "validation": 17,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\high_school_psychology",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 545,
+          "validation": 60,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\high_school_statistics",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 216,
+          "validation": 23,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\high_school_us_history",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 204,
+          "validation": 22,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\high_school_world_history",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 237,
+          "validation": 26,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\human_aging",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 223,
+          "validation": 23,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\human_sexuality",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 131,
+          "validation": 12,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\international_law",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 121,
+          "validation": 13,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\jurisprudence",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 108,
+          "validation": 11,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\logical_fallacies",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 163,
+          "validation": 18,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\machine_learning",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 112,
+          "validation": 11,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\management",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 103,
+          "validation": 11,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\marketing",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 234,
+          "validation": 25,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\medical_genetics",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 100,
+          "validation": 11,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\miscellaneous",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 783,
+          "validation": 86,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\moral_disputes",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 346,
+          "validation": 38,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\moral_scenarios",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 895,
+          "validation": 100,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\nutrition",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 306,
+          "validation": 33,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\philosophy",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 311,
+          "validation": 34,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\prehistory",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 324,
+          "validation": 35,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\professional_accounting",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 282,
+          "validation": 31,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\professional_law",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 1534,
+          "validation": 170,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\professional_medicine",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 272,
+          "validation": 31,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\professional_psychology",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 612,
+          "validation": 69,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\public_relations",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 110,
+          "validation": 12,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\security_studies",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 245,
+          "validation": 27,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\sociology",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 201,
+          "validation": 22,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\us_foreign_policy",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 100,
+          "validation": 11,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\virology",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 166,
+          "validation": 18,
+          "dev": 5
+        },
+        "error": null
+      },
+      {
+        "path": "offline_datasets\\mmlu\\world_religions",
+        "valid": true,
+        "splits": [
+          "test",
+          "validation",
+          "dev"
+        ],
+        "num_examples": {
+          "test": 171,
+          "validation": 19,
+          "dev": 5
+        },
+        "error": null
+      }
+    ]
+  }
+}

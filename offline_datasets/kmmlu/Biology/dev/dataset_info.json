@@ -1,0 +1,86 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "Biology",
+  "dataset_name": "kmmlu",
+  "dataset_size": 1256958,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/HAERAE-HUB/KMMLU@d61b3f19e552c576bf5960dd24289763edc36a88/data/Biology-train.csv": {
+      "num_bytes": 930884,
+      "checksum": null
+    },
+    "hf://datasets/HAERAE-HUB/KMMLU@d61b3f19e552c576bf5960dd24289763edc36a88/data/Biology-dev.csv": {
+      "num_bytes": 949,
+      "checksum": null
+    },
+    "hf://datasets/HAERAE-HUB/KMMLU@d61b3f19e552c576bf5960dd24289763edc36a88/data/Biology-test.csv": {
+      "num_bytes": 215046,
+      "checksum": null
+    }
+  },
+  "download_size": 1146879,
+  "features": {
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "answer": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "A": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "B": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "C": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "D": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Category": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Human Accuracy": {
+      "dtype": "float64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 2403837,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 1018042,
+      "num_examples": 3980,
+      "dataset_name": "kmmlu"
+    },
+    "dev": {
+      "name": "dev",
+      "num_bytes": 1015,
+      "num_examples": 5,
+      "dataset_name": "kmmlu"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 237901,
+      "num_examples": 1000,
+      "dataset_name": "kmmlu"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

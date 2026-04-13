@@ -1,0 +1,86 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "Food-Processing",
+  "dataset_name": "kmmlu",
+  "dataset_size": 4296963,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/HAERAE-HUB/KMMLU@d61b3f19e552c576bf5960dd24289763edc36a88/data/Food-Processing-train.csv": {
+      "num_bytes": 3687815,
+      "checksum": null
+    },
+    "hf://datasets/HAERAE-HUB/KMMLU@d61b3f19e552c576bf5960dd24289763edc36a88/data/Food-Processing-dev.csv": {
+      "num_bytes": 683,
+      "checksum": null
+    },
+    "hf://datasets/HAERAE-HUB/KMMLU@d61b3f19e552c576bf5960dd24289763edc36a88/data/Food-Processing-test.csv": {
+      "num_bytes": 267683,
+      "checksum": null
+    }
+  },
+  "download_size": 3956181,
+  "features": {
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "answer": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "A": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "B": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "C": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "D": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Category": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Human Accuracy": {
+      "dtype": "float64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 8253144,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 4005430,
+      "num_examples": 14630,
+      "dataset_name": "kmmlu"
+    },
+    "dev": {
+      "name": "dev",
+      "num_bytes": 765,
+      "num_examples": 5,
+      "dataset_name": "kmmlu"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 290768,
+      "num_examples": 1000,
+      "dataset_name": "kmmlu"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

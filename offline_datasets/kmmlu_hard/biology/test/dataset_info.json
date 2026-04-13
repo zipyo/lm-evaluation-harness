@@ -1,0 +1,76 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "biology",
+  "dataset_name": "kmmlu-hard",
+  "dataset_size": 31217,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/HAERAE-HUB/KMMLU-HARD@58564a93d9f8d302a5a5ae41ab2f901dc303d5e1/data/biology-dev.csv": {
+      "num_bytes": 7641,
+      "checksum": null
+    },
+    "hf://datasets/HAERAE-HUB/KMMLU-HARD@58564a93d9f8d302a5a5ae41ab2f901dc303d5e1/data/biology-hard-test.csv": {
+      "num_bytes": 20889,
+      "checksum": null
+    }
+  },
+  "download_size": 28530,
+  "features": {
+    "category": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "A": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "B": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "C": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "D": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "cot": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "answer": {
+      "dtype": "int64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 59747,
+  "splits": {
+    "dev": {
+      "name": "dev",
+      "num_bytes": 7727,
+      "num_examples": 5,
+      "dataset_name": "kmmlu-hard"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 23490,
+      "num_examples": 100,
+      "dataset_name": "kmmlu-hard"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

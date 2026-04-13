@@ -1,0 +1,86 @@
+{
+  "builder_name": "csv",
+  "citation": "",
+  "config_name": "Civil-Engineering",
+  "dataset_name": "kmmlu",
+  "dataset_size": 3501851,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/HAERAE-HUB/KMMLU@d61b3f19e552c576bf5960dd24289763edc36a88/data/Civil-Engineering-train.csv": {
+      "num_bytes": 2956128,
+      "checksum": null
+    },
+    "hf://datasets/HAERAE-HUB/KMMLU@d61b3f19e552c576bf5960dd24289763edc36a88/data/Civil-Engineering-dev.csv": {
+      "num_bytes": 1844,
+      "checksum": null
+    },
+    "hf://datasets/HAERAE-HUB/KMMLU@d61b3f19e552c576bf5960dd24289763edc36a88/data/Civil-Engineering-test.csv": {
+      "num_bytes": 316107,
+      "checksum": null
+    }
+  },
+  "download_size": 3274079,
+  "features": {
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "answer": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "A": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "B": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "C": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "D": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Category": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "Human Accuracy": {
+      "dtype": "float64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 6775930,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 3160652,
+      "num_examples": 9359,
+      "dataset_name": "kmmlu"
+    },
+    "dev": {
+      "name": "dev",
+      "num_bytes": 1919,
+      "num_examples": 5,
+      "dataset_name": "kmmlu"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 339280,
+      "num_examples": 1000,
+      "dataset_name": "kmmlu"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

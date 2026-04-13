@@ -50,5 +50,5 @@ examples/wandb/
 #uv
 uv.lock
 
-# Offline datasets
-offline_datasets/
+# Offline datasets (비공개)
+offline_datasets/instruction-following-eval-ko/

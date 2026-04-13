@@ -1,0 +1,80 @@
+{
+  "builder_name": "json",
+  "citation": "",
+  "config_name": "kbl_reasoning_causal_reasoning_qa",
+  "dataset_name": "kbl",
+  "dataset_size": 499786,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/lbox/kbl@695653ba87affa2c3113896013179c81fc16786a/reasoning/kbl_causal_reasoning_qa_v0.1.json": {
+      "num_bytes": 526973,
+      "checksum": null
+    }
+  },
+  "download_size": 526973,
+  "features": {
+    "doc-id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "facts_charged": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "defendant_claim": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "facts_accepted": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "cause": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "effect": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "label": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "A": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "B": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "meta": {
+      "raw-data-doc-ids": {
+        "dtype": "string",
+        "_type": "Value"
+      }
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 1026759,
+  "splits": {
+    "test": {
+      "name": "test",
+      "num_bytes": 499786,
+      "num_examples": 95,
+      "dataset_name": "kbl"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

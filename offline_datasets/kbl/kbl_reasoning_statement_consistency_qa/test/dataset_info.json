@@ -1,0 +1,68 @@
+{
+  "builder_name": "json",
+  "citation": "",
+  "config_name": "kbl_reasoning_statement_consistency_qa",
+  "dataset_name": "kbl",
+  "dataset_size": 61210,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/lbox/kbl@695653ba87affa2c3113896013179c81fc16786a/reasoning/kbl_logical_contradiction_qa_v0.1.json": {
+      "num_bytes": 79939,
+      "checksum": null
+    }
+  },
+  "download_size": 79939,
+  "features": {
+    "doc-id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "statement1": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "statement2": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "label": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "A": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "B": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "meta": {
+      "raw-data-doc-ids": {
+        "dtype": "string",
+        "_type": "Value"
+      }
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 141149,
+  "splits": {
+    "test": {
+      "name": "test",
+      "num_bytes": 61210,
+      "num_examples": 91,
+      "dataset_name": "kbl"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

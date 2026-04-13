@@ -1,0 +1,100 @@
+{
+  "builder_name": "json",
+  "citation": "",
+  "config_name": "kbl_reasoning_case_relevance_qa_q",
+  "dataset_name": "kbl",
+  "dataset_size": 736954,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/lbox/kbl@695653ba87affa2c3113896013179c81fc16786a/reasoning/kbl_case_relevance_qa_q_v0.1.json": {
+      "num_bytes": 757498,
+      "checksum": null
+    }
+  },
+  "download_size": 757498,
+  "features": {
+    "doc-id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "query": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "retrieved_case_result": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "retrieved_case_appellant": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "retrieved_case_judicial_opinion": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "retrieved_case_fact": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "retrieved_case_claim": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "A": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "B": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "label": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "meta": {
+      "query-lower-court-id": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "query-supreme-court-id:": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "retrieved-lower-court-id": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "retrieved-supreme-court-id": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "type": {
+        "dtype": "string",
+        "_type": "Value"
+      }
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 1494452,
+  "splits": {
+    "test": {
+      "name": "test",
+      "num_bytes": 736954,
+      "num_examples": 46,
+      "dataset_name": "kbl"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
