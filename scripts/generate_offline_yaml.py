@@ -100,6 +100,49 @@ metadata:
   version: 2.0
 '''
 
+IFEVAL_TEMPLATE = '''# Auto-generated offline task for {name}
+task: {task_name}
+dataset_path: {dataset_path}
+dataset_name: null
+output_type: generate_until
+test_split: train
+num_fewshot: 0
+doc_to_text: prompt
+doc_to_target: 0
+generation_kwargs:
+  until: []
+  do_sample: false
+  temperature: 0.0
+  max_gen_toks: 1280
+process_results: !function utils.process_results
+metric_list:
+  - metric: prompt_level_strict_acc
+    aggregation: mean
+    higher_is_better: true
+  - metric: inst_level_strict_acc
+    aggregation: !function utils.agg_inst_level_acc
+    higher_is_better: true
+  - metric: prompt_level_loose_acc
+    aggregation: mean
+    higher_is_better: true
+  - metric: inst_level_loose_acc
+    aggregation: !function utils.agg_inst_level_acc
+    higher_is_better: true
+metadata:
+  version: 1.0
+'''
+
+IFEVAL_CONFIGS = {
+    "ifeval": {
+        "name": "IFEval",
+        "dir_name": "IFEval",
+    },
+    "ifeval_ko": {
+        "name": "IFEval Korean",
+        "dir_name": "instruction-following-eval-ko",
+    },
+}
+
 UTILS_PY = '''# Auto-generated utils for offline tasks
 
 def mmlu_doc_to_text(doc):
@@ -134,7 +177,7 @@ def generate_mmlu_yaml(subset: str, data_dir: Path, output_dir: Path):
 
     output_file = output_dir / "mmlu" / f"{task_name}.yaml"
     output_file.parent.mkdir(parents=True, exist_ok=True)
-    output_file.write_text(yaml_content)
+    output_file.write_text(yaml_content, encoding="utf-8")
     return task_name
 
 
@@ -151,7 +194,37 @@ def generate_kmmlu_yaml(subset: str, data_dir: Path, output_dir: Path):
 
     output_file = output_dir / "kmmlu" / f"{task_name}.yaml"
     output_file.parent.mkdir(parents=True, exist_ok=True)
-    output_file.write_text(yaml_content)
+    output_file.write_text(yaml_content, encoding="utf-8")
+    return task_name
+
+
+def generate_ifeval_yaml(name: str, data_dir: Path, output_dir: Path):
+    """IFEval 오프라인 YAML 생성"""
+    config = IFEVAL_CONFIGS[name]
+    task_name = f"{name}_offline"
+    dataset_path = str(data_dir / config["dir_name"])
+
+    yaml_content = IFEVAL_TEMPLATE.format(
+        name=config["name"],
+        task_name=task_name,
+        dataset_path=dataset_path
+    )
+
+    ifeval_dir = output_dir / "ifeval"
+    ifeval_dir.mkdir(parents=True, exist_ok=True)
+
+    output_file = ifeval_dir / f"{task_name}.yaml"
+    output_file.write_text(yaml_content, encoding="utf-8")
+
+    # utils.py 생성 (기존 ifeval utils를 재사용)
+    utils_file = ifeval_dir / "utils.py"
+    if not utils_file.exists():
+        utils_file.write_text(
+            "# IFEval offline utils — 기존 ifeval utils를 재사용\n"
+            "from lm_eval.tasks.ifeval.utils import process_results, agg_inst_level_acc\n",
+            encoding="utf-8",
+        )
+
     return task_name
 
 
@@ -169,14 +242,14 @@ aggregate_metric_list:
 '''
 
     output_file = output_dir / f"_{group_name}.yaml"
-    output_file.write_text(yaml_content)
+    output_file.write_text(yaml_content, encoding="utf-8")
 
 
 def main():
     parser = argparse.ArgumentParser(description="오프라인 태스크 YAML 생성")
     parser.add_argument("--data-dir", type=str, required=True, help="다운로드된 데이터셋 경로")
     parser.add_argument("--output-dir", type=str, required=True, help="YAML 출력 경로")
-    parser.add_argument("--benchmark", type=str, choices=["all", "mmlu", "kmmlu"], default="all")
+    parser.add_argument("--benchmark", type=str, choices=["all", "mmlu", "kmmlu", "ifeval"], default="all")
 
     args = parser.parse_args()
 
@@ -189,7 +262,7 @@ def main():
 
     # utils.py 생성
     utils_file = output_dir / "utils.py"
-    utils_file.write_text(UTILS_PY)
+    utils_file.write_text(UTILS_PY, encoding="utf-8")
     print(f"생성: {utils_file}")
 
     mmlu_tasks = []
@@ -227,10 +300,24 @@ def main():
             generate_group_yaml("kmmlu_offline", kmmlu_tasks, output_dir)
             print(f"\n그룹 생성: kmmlu_offline ({len(kmmlu_tasks)}개 태스크)")
 
+    # IFEval 생성
+    ifeval_tasks = []
+    if args.benchmark in ["all", "ifeval"]:
+        print("\n=== IFEval 오프라인 YAML 생성 ===")
+        for name, config in IFEVAL_CONFIGS.items():
+            dataset_path = data_dir / config["dir_name"]
+            if dataset_path.exists():
+                task_name = generate_ifeval_yaml(name, data_dir, output_dir)
+                ifeval_tasks.append(task_name)
+                print(f"  생성: {task_name}")
+            else:
+                print(f"  건너뜀 (데이터 없음): {name} ({dataset_path})")
+
     print("\n" + "=" * 50)
     print("완료!")
     print(f"MMLU: {len(mmlu_tasks)}개")
     print(f"KMMLU: {len(kmmlu_tasks)}개")
+    print(f"IFEval: {len(ifeval_tasks)}개")
     print("\n사용법:")
     print(f"  lm-eval run --tasks mmlu_offline,kmmlu_offline --include_path {output_dir} ...")
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-벤치마크 데이터셋 다운로드 스크립트 (MMLU, KMMLU, KBL)
+벤치마크 데이터셋 다운로드 스크립트 (MMLU, KMMLU, KBL, IFEval)
 
 save_to_disk() Arrow 형식으로 저장하여 오프라인 환경에서 사용 가능하도록 함.
 
@@ -12,6 +12,7 @@ Usage:
     python download_benchmarks.py --output-dir ./offline_datasets --benchmark mmlu
     python download_benchmarks.py --output-dir ./offline_datasets --benchmark kmmlu
     python download_benchmarks.py --output-dir ./offline_datasets --benchmark kbl
+    python download_benchmarks.py --output-dir ./offline_datasets --benchmark ifeval
 
     # 서브셋 목록 확인
     python download_benchmarks.py --list-subsets
@@ -138,6 +139,11 @@ BENCHMARKS = {
             "telecommunications_and_wireless_technology",
         ],
     },
+    "ifeval": {
+        "dataset_path": "google/IFEval",
+        "description": "Instruction Following Eval",
+        "subsets": [],
+    },
     "kbl": {
         "dataset_path": "lbox/kbl",
         "description": "Korean Benchmark for Legal Language Understanding (68 subsets)",
@@ -208,6 +214,40 @@ def download_and_save(
     return result
 
 
+def download_single_dataset(
+    benchmark: str,
+    output_dir: Path,
+    dataset_path: str,
+) -> dict:
+    """서브셋 없는 단일 데이터셋 다운로드 및 저장"""
+    save_path = output_dir / benchmark
+    result = {
+        "benchmark": benchmark,
+        "subset": None,
+        "save_path": str(save_path),
+        "success": False,
+        "splits": [],
+        "error": None,
+    }
+
+    try:
+        logger.info(f"다운로드 중: {dataset_path}")
+        ds = load_dataset(dataset_path)
+        ds.save_to_disk(str(save_path))
+
+        result["success"] = True
+        result["splits"] = list(ds.keys())
+        result["num_examples"] = {split: len(ds[split]) for split in ds.keys()}
+
+        logger.info(f"✓ 저장 완료: {save_path}")
+
+    except Exception as e:
+        result["error"] = str(e)
+        logger.error(f"✗ 실패: {benchmark} - {e}")
+
+    return result
+
+
 def download_benchmark(benchmark: str, output_dir: Path) -> List[dict]:
     """벤치마크 전체 다운로드"""
     if benchmark not in BENCHMARKS:
@@ -220,6 +260,12 @@ def download_benchmark(benchmark: str, output_dir: Path) -> List[dict]:
 
     logger.info(f"=== {benchmark.upper()} 다운로드 시작 ===")
     logger.info(f"데이터셋: {dataset_path}")
+
+    # 서브셋 없는 단일 데이터셋
+    if not subsets:
+        result = download_single_dataset(benchmark, output_dir, dataset_path)
+        return [result]
+
     logger.info(f"서브셋 수: {len(subsets)}")
 
     results = []
@@ -282,7 +328,7 @@ def main():
     parser.add_argument(
         "--benchmark",
         type=str,
-        choices=["all", "mmlu", "kmmlu", "kmmlu_hard", "kbl"],
+        choices=["all", "mmlu", "kmmlu", "kmmlu_hard", "kbl", "ifeval"],
         default="all",
         help="다운로드할 벤치마크 (기본값: all)"
     )
