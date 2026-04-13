@@ -10,8 +10,8 @@
 | KMMLU (45개 과목) | `download_benchmarks.py --benchmark kmmlu` | `generate_offline_yaml.py` |
 | KMMLU-HARD (45개 과목) | `download_benchmarks.py --benchmark kmmlu_hard` | `generate_offline_yaml.py` |
 | KBL (68개 서브셋) | `download_benchmarks.py --benchmark kbl` | `generate_kbl_offline_yaml.py` |
-| IFEval | `download_benchmarks.py --benchmark ifeval` | `lm_eval/tasks/ifeval/ifeval_offline.yaml` |
-| IFEval-KO | 수동 복사 (HF 미공개) | `lm_eval/tasks/ifeval/ifeval_ko_offline.yaml` |
+| IFEval | `download_benchmarks.py --benchmark ifeval` | `lm_eval/tasks/ifeval/ifeval.yaml` |
+| IFEval-KO | 수동 복사 (HF 미공개) | `lm_eval/tasks/ifeval/ko/ifeval_ko.yaml` |
 
 ## 1단계: 데이터셋 다운로드 (온라인 환경)
 
@@ -97,14 +97,14 @@ export TRANSFORMERS_OFFLINE=1
 # IFEval-KO
 lm-eval run --model vllm \
     --model_args pretrained=/path/to/model,tensor_parallel_size=2,dtype=bfloat16,max_model_len=8192 \
-    --tasks ifeval_ko_offline \
+    --tasks ifeval_ko \
     --batch_size auto \
     --output_path ./results
 
 # IFEval (영어)
 lm-eval run --model vllm \
     --model_args pretrained=/path/to/model,tensor_parallel_size=2,dtype=bfloat16 \
-    --tasks ifeval_offline \
+    --tasks ifeval \
     --batch_size auto \
     --output_path ./results
 
@@ -130,7 +130,7 @@ python -m vllm.entrypoints.openai.api_server \
 # 2. lm-eval에서 API로 연결
 lm-eval run --model local-chat-completions \
     --model_args model=my-model,base_url=http://localhost:8000/v1 \
-    --tasks ifeval_ko_offline \
+    --tasks ifeval_ko \
     --batch_size auto \
     --output_path ./results
 ```
@@ -140,7 +140,7 @@ lm-eval run --model local-chat-completions \
 ```bash
 lm-eval run --model vllm \
     --model_args pretrained=/path/to/model,tensor_parallel_size=2,dtype=bfloat16 \
-    --tasks ifeval_ko_offline \
+    --tasks ifeval_ko \
     --apply_chat_template \
     --fewshot_as_multiturn \
     --batch_size auto \
