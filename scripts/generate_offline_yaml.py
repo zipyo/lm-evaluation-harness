@@ -137,10 +137,6 @@ IFEVAL_CONFIGS = {
         "name": "IFEval",
         "dir_name": "IFEval",
     },
-    "ifeval_ko": {
-        "name": "IFEval Korean",
-        "dir_name": "instruction-following-eval-ko",
-    },
 }
 
 UTILS_PY = '''# Auto-generated utils for offline tasks

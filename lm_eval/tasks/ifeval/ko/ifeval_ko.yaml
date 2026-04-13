@@ -1,4 +1,4 @@
-task: ifeval_ko_offline
+task: ifeval_ko
 dataset_path: ./offline_datasets/instruction-following-eval-ko
 dataset_name: null
 output_type: generate_until
@@ -26,4 +26,4 @@ metric_list:
     aggregation: !function utils.agg_inst_level_acc
     higher_is_better: true
 metadata:
-  version: 1.0
+  version: 2.0
