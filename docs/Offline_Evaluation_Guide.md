@@ -1,329 +1,178 @@
 # 오프라인 환경 평가 가이드
 
-이 가이드는 인터넷 연결이 없는 환경에서 lm-evaluation-harness를 사용하는 방법을 설명합니다.
+인터넷이 차단된 GPU 서버에서 lm-evaluation-harness로 LLM 평가를 수행하는 방법.
 
-## 개요
+## 지원 벤치마크
 
-오프라인 환경에서 평가를 수행하려면:
-1. 온라인 환경에서 모든 데이터셋을 사전 다운로드
-2. 오프라인 환경으로 데이터 전송
-3. 환경 변수 설정 후 평가 실행
+| 벤치마크 | 다운로드 스크립트 | 오프라인 YAML |
+|----------|------------------|--------------|
+| MMLU (57개 과목) | `download_benchmarks.py --benchmark mmlu` | `generate_offline_yaml.py` |
+| KMMLU (45개 과목) | `download_benchmarks.py --benchmark kmmlu` | `generate_offline_yaml.py` |
+| KMMLU-HARD (45개 과목) | `download_benchmarks.py --benchmark kmmlu_hard` | `generate_offline_yaml.py` |
+| KBL (68개 서브셋) | `download_benchmarks.py --benchmark kbl` | `generate_kbl_offline_yaml.py` |
+| IFEval | `download_benchmarks.py --benchmark ifeval` | `lm_eval/tasks/ifeval/ifeval_offline.yaml` |
+| IFEval-KO | 수동 복사 (HF 미공개) | `lm_eval/tasks/ifeval/ifeval_ko_offline.yaml` |
 
-## 1단계: 데이터셋 준비 (온라인 환경)
-
-### 방법 1: 자동화 스크립트 사용 (권장)
-
-```bash
-# 실행 권한 부여
-chmod +x scripts/prepare_offline_cache.sh
-
-# 모든 데이터셋 다운로드 및 압축
-./scripts/prepare_offline_cache.sh /path/to/cache
-
-# 또는 기본 경로 사용
-./scripts/prepare_offline_cache.sh
-```
-
-이 스크립트는:
-- 모든 task의 데이터셋을 자동으로 다운로드
-- tar.gz 형식으로 압축
-- 설정 스크립트와 문서 생성
-
-### 방법 2: 수동으로 특정 데이터셋만 다운로드
+## 1단계: 데이터셋 다운로드 (온라인 환경)
 
 ```bash
-# 특정 task의 데이터셋만 다운로드
-python scripts/download_all_datasets.py \
-    --cache-dir /path/to/cache \
-    --tasks hellaswag,arc_easy,winogrande
+# 전체 다운로드
+python scripts/download_benchmarks.py --output-dir ./offline_datasets --benchmark all
 
-# task 목록 파일 사용
-echo "hellaswag" > tasks.txt
-echo "arc_easy" >> tasks.txt
-python scripts/download_all_datasets.py \
-    --cache-dir /path/to/cache \
-    --task-file tasks.txt
+# 개별 벤치마크
+python scripts/download_benchmarks.py --output-dir ./offline_datasets --benchmark ifeval
+python scripts/download_benchmarks.py --output-dir ./offline_datasets --benchmark mmlu
+python scripts/download_benchmarks.py --output-dir ./offline_datasets --benchmark kbl
+
+# 기업 프록시 환경
+python scripts/download_benchmarks.py --output-dir ./offline_datasets --benchmark all \
+    --proxy http://proxy:8080 --no-ssl
 ```
 
-### 방법 3: Python으로 직접 다운로드
+다운로드된 데이터셋은 Arrow 형식으로 `offline_datasets/`에 저장된다.
 
-```python
-# download_datasets.py
-import datasets
-from pathlib import Path
+### 디렉토리 구조
 
-CACHE_DIR = "/path/to/offline/cache"
-DATASETS_TO_DOWNLOAD = [
-    ("Rowan/hellaswag", None),
-    ("allenai/ai2_arc", "ARC-Easy"),
-    ("allenai/ai2_arc", "ARC-Challenge"),
-    ("allenai/winogrande", "winogrande_xl"),
-    ("EleutherAI/piqa", None),
-    ("Rowan/hellaswag", None),
-    ("cais/mmlu", "all"),
-    ("gsm8k", "main"),
-]
-
-for dataset_path, config_name in DATASETS_TO_DOWNLOAD:
-    print(f"Downloading {dataset_path}/{config_name}...")
-    try:
-        dataset = datasets.load_dataset(
-            dataset_path,
-            config_name,
-            cache_dir=CACHE_DIR,
-            trust_remote_code=True
-        )
-        print(f"✓ Downloaded {dataset_path}")
-    except Exception as e:
-        print(f"✗ Failed to download {dataset_path}: {e}")
-
-print(f"\nDatasets cached at: {CACHE_DIR}")
+```
+offline_datasets/
+├── mmlu/
+│   ├── abstract_algebra/
+│   ├── anatomy/
+│   └── ...
+├── kmmlu/
+│   ├── Accounting/
+│   └── ...
+├── kbl/
+│   ├── bar_exam_civil_2012/
+│   └── ...
+├── IFEval/
+├── instruction-following-eval-ko/
+└── download_summary.json
 ```
 
-## 2단계: 데이터 전송
+## 2단계: 오프라인 YAML 생성
 
-### 압축 및 전송
+MMLU/KMMLU는 서브셋이 많아 YAML을 동적으로 생성한다. IFEval은 이미 YAML이 포함되어 있어 이 단계가 불필요하다.
 
 ```bash
-# 캐시 디렉토리 압축 (온라인 환경)
-tar -czf lm_eval_datasets.tar.gz -C /path/to offline_cache/
+# MMLU/KMMLU 오프라인 YAML 생성
+python scripts/generate_offline_yaml.py \
+    --data-dir ./offline_datasets \
+    --output-dir ./offline_tasks
 
-# USB, 네트워크 드라이브 등으로 전송
-cp lm_eval_datasets.tar.gz /mnt/usb/
-
-# 오프라인 환경에서 압축 해제
-tar -xzf lm_eval_datasets.tar.gz -C /workspace/
+# KBL 오프라인 YAML 생성
+python scripts/generate_kbl_offline_yaml.py \
+    --data-dir ./offline_datasets/kbl \
+    --output-dir ./lm_eval/tasks/kbl_offline
 ```
 
-### 전송할 파일 목록
-- `lm_eval_datasets.tar.gz` - 데이터셋 캐시
-- `setup_offline_cache.sh` - 설정 스크립트 (선택)
-- 평가할 모델 파일들
-
-## 3단계: 오프라인 환경 설정
-
-### 환경 변수 설정
+## 3단계: 오프라인 환경으로 전송
 
 ```bash
-# 필수 환경 변수
-export HF_DATASETS_CACHE="/workspace/offline_cache"
-export HF_HOME="/workspace/offline_cache"
-export HF_DATASETS_OFFLINE=1
-export TRANSFORMERS_OFFLINE=1
+# 압축
+tar -czf lm_eval_offline.tar.gz offline_datasets/ offline_tasks/
 
-# 확인
-echo "HF_DATASETS_CACHE=$HF_DATASETS_CACHE"
-echo "HF_DATASETS_OFFLINE=$HF_DATASETS_OFFLINE"
-```
+# GPU 서버로 전송
+scp lm_eval_offline.tar.gz user@gpu-server:/workspace/
 
-### 영구 설정 (.bashrc)
-
-```bash
-# ~/.bashrc 또는 ~/.bash_profile에 추가
-cat >> ~/.bashrc << 'EOF'
-# 오프라인 평가 환경
-export HF_DATASETS_CACHE="/workspace/offline_cache"
-export HF_HOME="/workspace/offline_cache"
-export HF_DATASETS_OFFLINE=1
-export TRANSFORMERS_OFFLINE=1
-EOF
-
-# 적용
-source ~/.bashrc
+# GPU 서버에서 압축 해제
+ssh user@gpu-server
+cd /workspace/lm-evaluation-harness
+tar -xzf /workspace/lm_eval_offline.tar.gz
 ```
 
 ## 4단계: 오프라인 평가 실행
 
-### 기본 실행
+### 환경 변수 설정
 
 ```bash
-# 로컬 모델과 캐시된 데이터로 평가
-lm_eval --model hf \
-    --model_args pretrained=/workspace/models/pythia-160m \
-    --tasks hellaswag \
-    --device cuda:0 \
-    --batch_size 8
+export HF_DATASETS_OFFLINE=1
+export HF_HUB_OFFLINE=1
+export TRANSFORMERS_OFFLINE=1
 ```
 
-### 여러 task 평가
+### vLLM으로 실행 (GPU, 권장)
 
 ```bash
-# 환경 변수가 설정된 상태에서
-MODELS="/workspace/models/pythia-160m" \
-TASKS="hellaswag arc_easy winogrande" \
-FEWSHOTS="0 5" \
-./scripts/run_multiple_evals.sh
+# IFEval-KO
+lm-eval run --model vllm \
+    --model_args pretrained=/path/to/model,tensor_parallel_size=2,dtype=bfloat16,max_model_len=8192 \
+    --tasks ifeval_ko_offline \
+    --batch_size auto \
+    --output_path ./results
+
+# IFEval (영어)
+lm-eval run --model vllm \
+    --model_args pretrained=/path/to/model,tensor_parallel_size=2,dtype=bfloat16 \
+    --tasks ifeval_offline \
+    --batch_size auto \
+    --output_path ./results
+
+# 생성된 오프라인 YAML 사용 (MMLU/KMMLU)
+lm-eval run --model vllm \
+    --model_args pretrained=/path/to/model,tensor_parallel_size=4,dtype=bfloat16 \
+    --tasks mmlu_offline,kmmlu_offline \
+    --include_path ./offline_tasks \
+    --batch_size auto \
+    --output_path ./results
 ```
 
-## 데이터셋 캐시 구조
+### OpenAI API 호환 서버 사용
 
+vLLM을 API 서버로 띄운 후 연결할 수도 있다.
+
+```bash
+# 1. vLLM API 서버 시작
+python -m vllm.entrypoints.openai.api_server \
+    --model /path/to/model \
+    --tensor-parallel-size 4
+
+# 2. lm-eval에서 API로 연결
+lm-eval run --model local-chat-completions \
+    --model_args model=my-model,base_url=http://localhost:8000/v1 \
+    --tasks ifeval_ko_offline \
+    --batch_size auto \
+    --output_path ./results
 ```
-offline_cache/
-├── downloads/
-│   ├── extracted/
-│   └── *.lock files
-├── Rowan___hellaswag/
-│   └── default/
-│       └── 1.1.0/
-│           ├── dataset_info.json
-│           └── *.arrow files
-├── allenai___ai2_arc/
-│   ├── ARC-Challenge/
-│   └── ARC-Easy/
-└── download_summary.json  # 다운로드 요약
+
+### Chat 모델 (Instruct) 사용 시
+
+```bash
+lm-eval run --model vllm \
+    --model_args pretrained=/path/to/model,tensor_parallel_size=2,dtype=bfloat16 \
+    --tasks ifeval_ko_offline \
+    --apply_chat_template \
+    --fewshot_as_multiturn \
+    --batch_size auto \
+    --output_path ./results
 ```
 
 ## 문제 해결
 
-### 1. "Dataset not found" 오류
+### "Dataset not found" 오류
 
 ```bash
-# 캐시 디렉토리 확인
-ls -la $HF_DATASETS_CACHE
-
 # 환경 변수 확인
 env | grep HF_
 
-# 특정 데이터셋 확인
-find $HF_DATASETS_CACHE -name "*hellaswag*"
+# 데이터셋 경로 확인
+ls offline_datasets/
+python -c "from datasets import load_from_disk; print(load_from_disk('offline_datasets/IFEval'))"
 ```
 
-### 2. "Connection error" 오류
+### "Connection error" 오류
+
+오프라인 환경 변수가 설정되지 않은 경우 발생한다.
 
 ```bash
-# 오프라인 모드 강제
 export HF_DATASETS_OFFLINE=1
-export TRANSFORMERS_OFFLINE=1
 export HF_HUB_OFFLINE=1
-
-# requests 라이브러리 오프라인 설정
-export REQUESTS_CA_BUNDLE=""
-export CURL_CA_BUNDLE=""
-```
-
-### 3. 캐시 버전 불일치
-
-```python
-# 캐시 메타데이터 확인
-import json
-from pathlib import Path
-
-cache_dir = Path("/workspace/offline_cache")
-for metadata_file in cache_dir.rglob("dataset_info.json"):
-    with open(metadata_file) as f:
-        info = json.load(f)
-        print(f"{metadata_file.parent}: version {info.get('version')}")
-```
-
-### 4. 권한 문제
-
-```bash
-# 캐시 디렉토리 권한 수정
-chmod -R 755 $HF_DATASETS_CACHE
-chown -R $USER:$USER $HF_DATASETS_CACHE
-```
-
-## 캐시 검증
-
-### 다운로드 완성도 확인
-
-```python
-# check_cache.py
-import json
-from pathlib import Path
-
-def check_cache(cache_dir):
-    cache_path = Path(cache_dir)
-    
-    # download_summary.json 확인
-    summary_file = cache_path / "download_summary.json"
-    if summary_file.exists():
-        with open(summary_file) as f:
-            summary = json.load(f)
-            print(f"Downloaded: {summary['total_downloaded']} datasets")
-            print(f"Failed: {summary['failed_count']} datasets")
-            
-            if summary['failed_datasets']:
-                print("\nFailed datasets:")
-                for item in summary['failed_datasets']:
-                    print(f"  - {item['dataset']}")
-    
-    # 실제 캐시 파일 확인
-    arrow_files = list(cache_path.rglob("*.arrow"))
-    print(f"\nFound {len(arrow_files)} arrow files")
-    
-    # 데이터셋별 정리
-    datasets = {}
-    for arrow_file in arrow_files:
-        dataset_name = arrow_file.parts[-4]  # 보통 4단계 상위가 데이터셋 이름
-        if dataset_name not in datasets:
-            datasets[dataset_name] = []
-        datasets[dataset_name].append(arrow_file.name)
-    
-    print(f"\nCached datasets ({len(datasets)}):")
-    for name in sorted(datasets.keys()):
-        print(f"  - {name}: {len(datasets[name])} files")
-
-check_cache("/workspace/offline_cache")
-```
-
-## 주요 데이터셋 목록
-
-자주 사용되는 데이터셋과 그 크기 (참고용):
-
-| Task | Dataset | 예상 크기 |
-|------|---------|----------|
-| hellaswag | Rowan/hellaswag | ~50MB |
-| arc_easy | allenai/ai2_arc (ARC-Easy) | ~5MB |
-| arc_challenge | allenai/ai2_arc (ARC-Challenge) | ~5MB |
-| winogrande | allenai/winogrande | ~10MB |
-| piqa | EleutherAI/piqa | ~10MB |
-| mmlu | cais/mmlu | ~500MB |
-| gsm8k | gsm8k | ~10MB |
-| truthfulqa | truthful_qa | ~5MB |
-| boolq | boolq | ~10MB |
-
-전체 캐시 크기는 모든 task를 포함할 경우 약 5-10GB 정도입니다.
-
-## 자동화 예시
-
-### 전체 오프라인 평가 워크플로우
-
-```bash
-#!/bin/bash
-# offline_evaluation.sh
-
-# 1. 환경 설정
-export HF_DATASETS_CACHE="/workspace/offline_cache"
-export HF_DATASETS_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
-
-# 2. 모델 경로 설정
-MODEL_PATH="/workspace/models/pythia-160m"
-
-# 3. 평가 실행
-echo "Starting offline evaluation..."
-lm_eval --model hf \
-    --model_args pretrained=$MODEL_PATH \
-    --tasks hellaswag,arc_easy,winogrande,piqa \
-    --num_fewshot 0 \
-    --device cuda:0 \
-    --batch_size auto \
-    --output_path results/
-
-echo "Evaluation complete!"
 ```
 
-## 팁과 모범 사례
+### vLLM 메모리 부족
 
-1. **충분한 디스크 공간 확보**: 전체 데이터셋 캐시는 10GB 이상 필요할 수 있음
-2. **버전 일치**: 온라인에서 다운로드한 datasets 라이브러리 버전과 오프라인 환경 버전 일치 필요
-3. **증분 다운로드**: 모든 task가 필요하지 않다면 필요한 것만 선택적으로 다운로드
-4. **캐시 재사용**: 한 번 준비한 캐시는 여러 평가에 재사용 가능
-5. **로그 확인**: 오프라인 모드에서는 더 자세한 로그 확인이 중요
-
-## 추가 자료
-
-- [HuggingFace Datasets 오프라인 모드](https://huggingface.co/docs/datasets/loading#offline)
-- [환경 변수 설정 가이드](https://huggingface.co/docs/datasets/package_reference/environment_variables)
-- [lm-evaluation-harness 문서](../README.md)
+```bash
+# max_model_len을 줄이거나 GPU 수를 늘린다
+--model_args pretrained=/path/to/model,tensor_parallel_size=4,max_model_len=4096,gpu_memory_utilization=0.9
+```
