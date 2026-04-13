@@ -28,7 +28,7 @@ ipython_config.py
 
 # Output and data
 output/
-data/
+/data/
 temp/
 test_logs/
 
